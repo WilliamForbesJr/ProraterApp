@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="mt-5">
+                <h1 class="display-1">Prorater</h1>
+                <div class="form-group">
+                    <label for="oldPlatformPrice">Current Platform Price:</label>
+                    <input class="form-control" id="oldPlatformPrice" type="number">
+                </div>
+                <div class="form-group">
+                    <label for="newPlatformPrice">New Platform Price:</label>
+                    <input class="form-control" id="newPlatformPrice" type="number">
+                </div>
+                <div class="form-group">
+                    <label for="daysInMonth">Days in Month:</label>
+                    <input class="form-control" id="daysInMonth" type="number">
+                </div>
+                <div class="form-group">
+                    <label for="newPlatformDays">Days on New Platform:</label>
+                    <input class="form-control" id="newPlatformDays" type="number">
+                </div>
+                <button class="btn btn-primary btn-lg" id="submit">Submit</button>
+                </div>
+                <ul class="list-inline h5 mt-3" id="resultsEl">
+                    <li class="list-inline-item mx-5" id="creditAmount"></li>
+                    <li class="list-inline-item mx-5" id="oldPlatformTotal"></li>
+                    <li class="list-inline-item mx-5" id="newPlatformTotal"></li>
+                </ul>
+            </div>
+        </div> 
+    </body>
+    <script src="views.js"></script>
+    <script src = "app.js"></script>
+</html>
