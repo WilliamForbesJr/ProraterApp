@@ -1,5 +1,6 @@
 const dataManager = (function (){
 
+    //instantize input and output data with IIFE to ensure it doesn't return undefined
     let inputData = {}
     outputData = {}
 
@@ -16,22 +17,32 @@ const dataManager = (function (){
             return inputData;
         },
 
-        mathFunctions: function() {
-            console.log(inputData)
-            const oldDailyRate = inputData.platformPrice / inputData.daysInMonth
-            const newDailyRate = inputData.newPlatformPrice / inputData.daysInMonth
+        calculateDailyRate: (price, daysInMonth) => {
+            return price / daysInMonth
+        },
 
-            const oldDailyTotal = oldDailyRate * inputData.oldPlatformDays
-            const newDailyTotal = newDailyRate * inputData.newPlatformDays
+        calculateTotals: (dailyRate, daysOnPlatform) => {
+            dailyRate * daysOnPlatform
+        },
 
-            const credit = inputData.platformPrice - (oldDailyTotal + newDailyTotal)
+        calculateDowngrade: function() {
+
+            //destructuring inputData for clarity
+            const { platformPrice, newPlatformPrice, daysInMonth, newPlatformDays, oldPlatformDays } = inputData
+    
+            //calculate daily rates for each platform type. Storing in new variable to recycle for second calculator
+            // const oldDailyRate = calculateDailyRate(platformPrice, daysInMonth)
+            // const newDailyRate = calculateDailyRate(newPlatformPrice, daysInMonth)
+
+            // const oldDailyTotal = oldDailyRate * oldPlatformDays
+            // const newDailyTotal = newDailyRate * newPlatformDays
 
             outputData = {
-                credit: Math.round(credit),
-                oldDailyTotal: Math.round(oldDailyTotal),
-                newDailyTotal:Math.round(newDailyTotal),
-                newDailyRate: Math.round(newDailyRate),
-                oldDailyRate: Math.round(oldDailyRate)
+                // credit: Math.round(platformPrice - (oldDailyTotal + newDailyTotal)),
+                newDailyRate: Math.round(this.calculateDailyRate(newPlatformPrice, daysInMonth)),
+                oldDailyRate: Math.round(this.calculateDailyRate(platformPrice, daysInMonth)),
+                // oldDailyTotal: Math.round(oldDailyTotal),
+                // newDailyTotal: Math.round(newDailyTotal),
             }
             return outputData
         }

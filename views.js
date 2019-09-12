@@ -23,7 +23,7 @@ const clearInputs = () => {
 }
 
 const showResults = () => {
-    const results = dataManager.mathFunctions()
+    const results = dataManager.calculateDowngrade()
 
     creditAmountEl.textContent= `Credit Amount: $${results.credit}`
     oldPlatformTotalEl.textContent = `Days On Old Platform Total: $${ results.oldDailyTotal }`

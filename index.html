@@ -5,8 +5,8 @@
     </head>
     <body>
         <div class="container">
-            <div class="mt-5">
-                <h1 class="display-1">Prorater</h1>
+            <div class="mt-5 mx-5" style="width: 25%; float:left">
+                <h2 class="display-4">Downgrade Prorater</h2>
                 <div class="form-group">
                     <label for="oldPlatformPrice">Current Platform Price:</label>
                     <input class="form-control" id="oldPlatformPrice" type="number">
@@ -24,14 +24,31 @@
                     <input class="form-control" id="newPlatformDays" type="number">
                 </div>
                 <button class="btn btn-primary btn-lg" id="submit">Submit</button>
-                </div>
                 <ul class="list-inline h5 mt-3" id="resultsEl">
-                    <li class="list-inline-item mx-5" id="creditAmount"></li>
-                    <li class="list-inline-item mx-5" id="oldPlatformTotal"></li>
-                    <li class="list-inline-item mx-5" id="newPlatformTotal"></li>
+                    <li class="list " id="creditAmount"></li>
                 </ul>
             </div>
-        </div> 
+
+            <div class="mt-5 mx-5" style="width: 25%; float:left">
+                <h2 class="display-4">Cancellation Prorater</h2>
+                <div class="form-group">
+                    <label for="oldPlatformPrice">Current Platform Price:</label>
+                    <input class="form-control" id="oldPlatformPrice" type="number">
+                </div>
+                <div class="form-group">
+                    <label for="daysInMonth">Days in Month:</label>
+                    <input class="form-control" id="daysInMonth" type="number">
+                </div>
+                <div class="form-group">
+                    <label for="newPlatformDays">Days remaining in last month:</label>
+                    <input class="form-control" id="newPlatformDays" type="number">
+                </div>
+                <button class="btn btn-primary btn-lg" id="submit">Submit</button>
+                <ul class="list-inline h5 mt-3" id="resultsEl">
+                    <li class="list " id="creditAmount"></li>
+                </ul>
+            </div>
+        </div>
     </body>
     <script src="views.js"></script>
     <script src = "app.js"></script>
