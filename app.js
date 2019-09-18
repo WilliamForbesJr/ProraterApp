@@ -22,32 +22,38 @@ const dataManager = (function (){
         },
 
         calculateTotals: (dailyRate, daysOnPlatform) => {
-            dailyRate * daysOnPlatform
+            return dailyRate * daysOnPlatform
+        },
+
+        calculateCredit: (platformPrice, oldDailyTotal, newDailyTotal) => {
+            return platformPrice - (oldDailyTotal + newDailyTotal)
         },
 
         calculateDowngrade: function() {
 
             //destructuring inputData for clarity
             const { platformPrice, newPlatformPrice, daysInMonth, newPlatformDays, oldPlatformDays } = inputData
-    
-            //calculate daily rates for each platform type. Storing in new variable to recycle for second calculator
-            // const oldDailyRate = calculateDailyRate(platformPrice, daysInMonth)
-            // const newDailyRate = calculateDailyRate(newPlatformPrice, daysInMonth)
-
-            // const oldDailyTotal = oldDailyRate * oldPlatformDays
-            // const newDailyTotal = newDailyRate * newPlatformDays
-
-            outputData = {
-                // credit: Math.round(platformPrice - (oldDailyTotal + newDailyTotal)),
+            
+            let outputData = {
+                //pushing platformPrice into obj to calculate credit after obj is initialized
+                platformPrice: platformPrice,
                 newDailyRate: Math.round(this.calculateDailyRate(newPlatformPrice, daysInMonth)),
                 oldDailyRate: Math.round(this.calculateDailyRate(platformPrice, daysInMonth)),
-                // oldDailyTotal: Math.round(oldDailyTotal),
-                // newDailyTotal: Math.round(newDailyTotal),
+                oldDailyTotal: Math.round(this.calculateTotals(oldPlatformDays, this.calculateDailyRate(platformPrice, daysInMonth))),
+                newDailyTotal: Math.round(this.calculateTotals(newPlatformDays, this.calculateDailyRate(newPlatformPrice, daysInMonth))),
             }
+
             return outputData
+        },
+
+        calculateCancellation: function() {
+            
+            return Math.round(this.calculateTotals(inputData.newPlatformDays, this.calculateDailyRate(inputData.newPlatformPrice, inputData.daysInMonth)))
+
+            
         }
     }
-}())
+})();
 
 
 

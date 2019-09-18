@@ -9,23 +9,24 @@
                 <h2 class="display-4">Downgrade Prorater</h2>
                 <div class="form-group">
                     <label for="oldPlatformPrice">Current Platform Price:</label>
-                    <input class="form-control" id="oldPlatformPrice" type="number">
+                    <input class="downgrade-input form-control" id="downgrade-oldPlatformPrice" type="number">
                 </div>
                 <div class="form-group">
                     <label for="newPlatformPrice">New Platform Price:</label>
-                    <input class="form-control" id="newPlatformPrice" type="number">
+                    <input class="downgrade-input form-control" id="downgrade-newPlatformPrice" type="number">
                 </div>
                 <div class="form-group">
                     <label for="daysInMonth">Days in Month:</label>
-                    <input class="form-control" id="daysInMonth" type="number">
+                    <input class="downgrade-input form-control" id="downgrade-daysInMonth" type="number">
                 </div>
                 <div class="form-group">
                     <label for="newPlatformDays">Days on New Platform:</label>
-                    <input class="form-control" id="newPlatformDays" type="number">
+                    <input class="downgrade-input form-control" id="downgrade-newPlatformDays" type="number">
                 </div>
-                <button class="btn btn-primary btn-lg" id="submit">Submit</button>
-                <ul class="list-inline h5 mt-3" id="resultsEl">
-                    <li class="list " id="creditAmount"></li>
+                <button class="btn btn-primary btn-lg" id="downgrade-submit">Submit</button>
+                <ul class="list-inline h5 mt-3" id="downgrade-resultsEl">
+                    <li class="list " id="downgrade-creditAmount"></li>
+
                 </ul>
             </div>
 
@@ -33,23 +34,25 @@
                 <h2 class="display-4">Cancellation Prorater</h2>
                 <div class="form-group">
                     <label for="oldPlatformPrice">Current Platform Price:</label>
-                    <input class="form-control" id="oldPlatformPrice" type="number">
+                    <input class="cancel-input form-control" id="cancel-platformPrice" type="number">
                 </div>
                 <div class="form-group">
-                    <label for="daysInMonth">Days in Month:</label>
-                    <input class="form-control" id="daysInMonth" type="number">
+                    <label for="daysInMonth">Days in Last Month:</label>
+                    <input class="cancel-input form-control" id="cancel-daysInMonth" type="number">
                 </div>
                 <div class="form-group">
                     <label for="newPlatformDays">Days remaining in last month:</label>
-                    <input class="form-control" id="newPlatformDays" type="number">
+                    <input class="cancel-input form-control" id="cancel-oldPlatformDays" type="number">
                 </div>
-                <button class="btn btn-primary btn-lg" id="submit">Submit</button>
-                <ul class="list-inline h5 mt-3" id="resultsEl">
-                    <li class="list " id="creditAmount"></li>
+                <button class="btn btn-primary btn-lg" id="cancel-submit">Submit</button>
+                
+                <ul class="list-inline h5 mt-3" id="cancel-resultsEl">
+                    <li class="list " id="cancel-creditAmount"></li>
                 </ul>
             </div>
         </div>
     </body>
     <script src="views.js"></script>
     <script src = "app.js"></script>
+    <script src = 'index.js'></script>
 </html>

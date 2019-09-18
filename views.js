@@ -1,31 +1,52 @@
-const platformPriceEl = document.querySelector('#oldPlatformPrice')
-const newPlatformPriceEl = document.querySelector('#newPlatformPrice')
-const daysinMonthEl = document.querySelector('#daysInMonth')
-const newPlatformDaysEl = document.querySelector('#newPlatformDays')
-const submitButton = document.querySelector('#submit')
-const resultsEl = document.querySelector('#resultsEl')
+const downgradeInput = {
+    platformPrice: document.querySelector('#downgrade-oldPlatformPrice'),
+    newPlatformPrice: document.querySelector('#downgrade-newPlatformPrice'),
+    daysinMonth: document.querySelector('#downgrade-daysInMonth'),
+    newPlatformDays: document.querySelector('#downgrade-newPlatformDays'),
+    submitButton: document.querySelector('#downgrade-submit'),
 
-const creditAmountEl = document.querySelector('#creditAmount')
-const oldPlatformTotalEl = document.querySelector('#oldPlatformTotal')
-const newPlatformTotalEl = document.querySelector('#newPlatformTotal')
-
-submitButton.addEventListener('click', () => {
-    dataManager.addInput(Number(platformPriceEl.value), Number(newPlatformPriceEl.value), Number(daysinMonthEl.value), Number(newPlatformDaysEl.value))
-    showResults()
-    clearInputs()
-})
-
-const clearInputs = () => {
-    platformPriceEl.value = ''
-    newPlatformPriceEl.value = ''
-    daysinMonthEl.value = ''
-    newPlatformDaysEl.value = ''
+    allinputs: document.querySelectorAll('.downgrade-input')
 }
 
-const showResults = () => {
-    const results = dataManager.calculateDowngrade()
-
-    creditAmountEl.textContent= `Credit Amount: $${results.credit}`
-    oldPlatformTotalEl.textContent = `Days On Old Platform Total: $${ results.oldDailyTotal }`
-    newPlatformTotalEl.textContent = `Days On New Platform Total: $${results.newDailyTotal}`
+const downgradeOutput = {
+    results: document.querySelector('#downgrade-resultsEl'),
+    creditAmount: document.querySelector('#downgrade-creditAmount'),
 }
+
+const cancelInput = {
+    newPlatformPrice: document.querySelector('#cancel-platformPrice'),
+    newPlatformDays: document.querySelector('#cancel-oldPlatformDays'),
+    daysinMonth: document.querySelector('#cancel-daysInMonth'),
+    submitButton: document.querySelector('#cancel-submit'),
+}
+
+const cancelOutput = {
+    results: document.querySelector('#cancel-resultsEl'),
+    creditAmount: document.querySelector('#cancel-creditAmount'),
+}
+
+//need to refactor using forEach loop
+const clearInputs = (...inputs) => {
+    inputs.forEach((item) => {
+        item.value = '';
+    })
+}
+
+const showResults = (output, type) => {
+    
+    if (type === 'downgrade') {
+        const results = dataManager.calculateDowngrade()
+        const credit = dataManager.calculateCredit(results.platformPrice, results.oldDailyTotal, results.newDailyTotal)
+        output.creditAmount.textContent = `Credit Amount: $${credit}`
+    }
+    if (type === 'cancellation') {
+        const results = dataManager.calculateCancellation()
+        output.creditAmount.textContent = `Credit Amount: $${results}`
+    }
+
+}
+
+
+
+
+
