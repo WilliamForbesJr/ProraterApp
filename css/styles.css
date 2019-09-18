@@ -35,3 +35,11 @@ div .form-group {
     text-transform: uppercase;
     height: 3rem;
 }
+
+.result {
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+}
+.resultOn {
+    opacity: 1;
+}

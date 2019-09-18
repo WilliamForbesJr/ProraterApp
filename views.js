@@ -5,7 +5,7 @@ const downgradeInput = {
     newPlatformDays: document.querySelector('#downgrade-newPlatformDays'),
     submitButton: document.querySelector('#downgrade-submit'),
 
-    allinputs: document.querySelectorAll('.downgrade-input')
+    allInputs: document.querySelectorAll('.downgrade-input')
 }
 
 const downgradeOutput = {
@@ -18,6 +18,8 @@ const cancelInput = {
     newPlatformDays: document.querySelector('#cancel-oldPlatformDays'),
     daysinMonth: document.querySelector('#cancel-daysInMonth'),
     submitButton: document.querySelector('#cancel-submit'),
+
+    allInputs: document.querySelectorAll('cancel-input')
 }
 
 const cancelOutput = {
@@ -43,7 +45,7 @@ const showResults = (output, type) => {
         const results = dataManager.calculateCancellation()
         output.creditAmount.textContent = `Credit: $${results}`
     }
-
+    output.creditAmount.classList.toggle('resultOn')
 }
 
 
