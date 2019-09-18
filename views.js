@@ -37,11 +37,11 @@ const showResults = (output, type) => {
     if (type === 'downgrade') {
         const results = dataManager.calculateDowngrade()
         const credit = dataManager.calculateCredit(results.platformPrice, results.oldDailyTotal, results.newDailyTotal)
-        output.creditAmount.textContent = `Credit Amount: $${credit}`
+        output.creditAmount.textContent = `Credit: $${credit}`
     }
     if (type === 'cancellation') {
         const results = dataManager.calculateCancellation()
-        output.creditAmount.textContent = `Credit Amount: $${results}`
+        output.creditAmount.textContent = `Credit: $${results}`
     }
 
 }
