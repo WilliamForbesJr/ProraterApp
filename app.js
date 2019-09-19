@@ -30,7 +30,6 @@ const dataManager = (function (){
         },
 
         calculateDowngrade: function() {
-
             //destructuring inputData for clarity
             const { platformPrice, newPlatformPrice, daysInMonth, newPlatformDays, oldPlatformDays } = inputData
             
@@ -42,18 +41,18 @@ const dataManager = (function (){
                 oldDailyTotal: Math.round(this.calculateTotals(oldPlatformDays, this.calculateDailyRate(platformPrice, daysInMonth))),
                 newDailyTotal: Math.round(this.calculateTotals(newPlatformDays, this.calculateDailyRate(newPlatformPrice, daysInMonth))),
             }
-
             return outputData
         },
 
         calculateCancellation: function() {
             
             return Math.round(this.calculateTotals(inputData.newPlatformDays, this.calculateDailyRate(inputData.newPlatformPrice, inputData.daysInMonth)))
-
-            
         }
     }
 })();
+
+//exporting for unit testing purposes. Will modularize JS files instead of relying on html script tags
+module.exports = dataManager;
 
 
 

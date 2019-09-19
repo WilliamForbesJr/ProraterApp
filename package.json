@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "dependencies": {
-    "cypress": "^3.4.1"
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^24.9.0"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open": "cypress open"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
