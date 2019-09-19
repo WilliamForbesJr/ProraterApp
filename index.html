@@ -5,52 +5,57 @@
         <link rel="stylesheet" href="./css/styles.css">
     </head>
     <body>
-        <div class="container d-flex justify-content-center">
-            <div class="prorater form-group mt-5 mx-5" style="width: 30%; float:left">
-                <h2 class="header mt-1 mb-5 flex-center">Downgrade</h2>
-                <div class="form-row">
-                    <div class="col form-group">
-                        <label for="oldPlatformPrice">Current Price:</label>
-                        <input class="downgrade-input form-control form-control-sm" id="downgrade-oldPlatformPrice" type="number">
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="row no gutters">
+                <div class="col-lg-6">
+                <div class="prorater mt-5 mx-5">
+                    <h2 class="header mt-1 mb-5 flex-center">Downgrade</h2>
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label for="oldPlatformPrice">Current Price:</label>
+                            <input class="downgrade-input form-control form-control-sm" id="downgrade-oldPlatformPrice" type="number">
+                        </div>
+                        <div class="col form-group">
+                            <label for="newPlatformPrice">New Price:</label>
+                            <input class="downgrade-input form-control form-control-sm" id="downgrade-newPlatformPrice" type="number">
+                        </div>
                     </div>
-                    <div class="col form-group">
-                        <label for="newPlatformPrice">New Price:</label>
-                        <input class="downgrade-input form-control form-control-sm" id="downgrade-newPlatformPrice" type="number">
+                    <div class="form-group">
+                        <label for="daysInMonth">Days in Month:</label>
+                        <input class="downgrade-input form-control form-control-sm" id="downgrade-daysInMonth" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label for="newPlatformDays">Days on New Platform:</label>
+                        <input class="downgrade-input form-control form-control-sm" id="downgrade-newPlatformDays" type="number">
+                    </div>
+                    <button class="btn btn-primary btn-block mt-3" id="downgrade-submit">Submit</button>
+                    <div class="results h3 mt-4" id="downgrade-resultsEl">
+                        <div class= "result" id="downgrade-creditAmount"></div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="daysInMonth">Days in Month:</label>
-                    <input class="downgrade-input form-control form-control-sm" id="downgrade-daysInMonth" type="number">
                 </div>
-                <div class="form-group">
-                    <label for="newPlatformDays">Days on New Platform:</label>
-                    <input class="downgrade-input form-control form-control-sm" id="downgrade-newPlatformDays" type="number">
-                </div>
-                <button class="btn btn-primary btn-block mt-3" id="downgrade-submit">Submit</button>
-                <div class="results h3 mt-4" id="downgrade-resultsEl">
-                    <div class= "result" id="downgrade-creditAmount"></div>
-
-                </div>
-            </div>
-
-            <div class="prorater form-group mt-5 mx-5" style="width: 30%; float:left">
-                <h2 class="header mt-1 mb-5">Cancellation</h2>
-                <div class="form-group">
-                    <label for="oldPlatformPrice">Current Platform Price:</label>
-                    <input class="cancel-input form-control form-control-sm" id="cancel-platformPrice" type="number">
-                </div>
-                <div class="form-group">
-                    <label for="daysInMonth">Days in Last Month:</label>
-                    <input class="cancel-input form-control form-control-sm" id="cancel-daysInMonth" type="number">
-                </div>
-                <div class="form-group">
-                    <label for="newPlatformDays">Days remaining in last month:</label>
-                    <input class="cancel-input form-control form-control-sm" id="cancel-oldPlatformDays" type="number">
-                </div>
-                <button class="btn btn-primary btn-block mt-3" id="cancel-submit">Submit</button>
-                
-                <div class="results h3 mt-4" id="cancel-resultsEl">
-                    <span class="result" id="cancel-creditAmount"></span>
+            
+                <div class="col-lg-6">
+                    <div class="prorater form-group mt-5 mx-5">
+                        <h2 class="header mt-1 mb-5">Cancellation</h2>
+                        <div class="form-group">
+                            <label for="oldPlatformPrice">Current Platform Price:</label>
+                            <input class="cancel-input form-control form-control-sm" id="cancel-platformPrice" type="number">
+                        </div>
+                        <div class="form-group">
+                            <label for="daysInMonth">Days in Last Month:</label>
+                            <input class="cancel-input form-control form-control-sm" id="cancel-daysInMonth" type="number">
+                        </div>
+                        <div class="form-group">
+                            <label for="newPlatformDays">Days remaining in last month:</label>
+                            <input class="cancel-input form-control form-control-sm" id="cancel-oldPlatformDays" type="number">
+                        </div>
+                        <button class="btn btn-primary btn-block mt-3" id="cancel-submit">Submit</button>
+                        
+                        <div class="results h3 mt-4" id="cancel-resultsEl">
+                            <span class="result" id="cancel-creditAmount"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

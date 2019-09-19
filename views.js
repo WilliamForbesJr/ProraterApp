@@ -1,3 +1,5 @@
+
+//separated input and output objects for cleaner reuse in DOM functions
 const downgradeInput = {
     platformPrice: document.querySelector('#downgrade-oldPlatformPrice'),
     newPlatformPrice: document.querySelector('#downgrade-newPlatformPrice'),
@@ -35,17 +37,21 @@ const clearInputs = (...inputs) => {
 }
 
 const showResults = (output, type) => {
-    
-    if (type === 'downgrade') {
-        const results = dataManager.calculateDowngrade()
-        const credit = dataManager.calculateCredit(results.platformPrice, results.oldDailyTotal, results.newDailyTotal)
-        output.creditAmount.textContent = `Credit: $${credit}`
-    }
-    if (type === 'cancellation') {
-        const results = dataManager.calculateCancellation()
-        output.creditAmount.textContent = `Credit: $${results}`
-    }
-    output.creditAmount.classList.toggle('resultOn')
+
+        if (type === 'downgrade') {
+            const results = dataManager.calculateDowngrade()
+            const credit = dataManager.calculateCredit(results.platformPrice, results.oldDailyTotal, results.newDailyTotal)
+            !isNaN(credit) ? output.creditAmount.textContent = `Credit: $${credit}` : console.log(credit);
+        }
+        if (type === 'cancellation') {
+            const results = dataManager.calculateCancellation()
+            !isNaN(results) ?output.creditAmount.textContent = `Credit: $${results}` : console.log(results)
+        }
+
+        output.creditAmount.classList.add('resultOn')
+
+    //added conditional to reuse function between downgrade and cancellation forms
+
 }
 
 
