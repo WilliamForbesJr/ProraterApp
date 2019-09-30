@@ -2,7 +2,7 @@ const dataManager = (function (){
 
     //instantize input and output data with IIFE to ensure it doesn't return undefined
     let inputData = {}
-    outputData = {}
+    let outputData = {}
 
     return {
 
@@ -45,7 +45,6 @@ const dataManager = (function (){
         },
 
         calculateCancellation: function() {
-            
             return Math.round(this.calculateTotals(inputData.newPlatformDays, this.calculateDailyRate(inputData.newPlatformPrice, inputData.daysInMonth)))
         }
     }

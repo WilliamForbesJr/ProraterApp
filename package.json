@@ -5,10 +5,13 @@
   "main": "app.js",
   "dependencies": {},
   "devDependencies": {
-    "jest": "^24.9.0"
+    "chai": "^4.2.0",
+    "cypress": "^3.4.1",
+    "jest": "^24.9.0",
+    "mocha": "^6.2.1"
   },
   "scripts": {
-    "test": "jest"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
