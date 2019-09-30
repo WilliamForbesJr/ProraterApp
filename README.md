@@ -9,7 +9,7 @@ This project was created as a way to make it easier for my team to calculate com
 - This app has 2 separate calculators to calculate fees when prorating downgrades and cancellations.
  
 ## Screenshots
-Include logo/demo screenshot etc.
+![UI Screenshot](https://i.imgur.com/eU0VZILl.jpg "UI Screenshot")
 
 ## Tech used
 - I have set output data to be an entire object even though the DOM only will display credit amount to user. This is intended to have in case team provides feedback on needing a more detailed breakdown.
