@@ -32,7 +32,7 @@ const cancelOutput = {
 //need to fix function as arguement doesn't seem to actually do anything.
 // When forEach is applied for object's "querySelectorALl" properties in console, it works.
     //likely an issue with arguement when calling the function.
-const clearInputs = (...inputs) => {
+const clearInputs = (inputs) => {
     inputs.forEach((item) => {
         item.value = '';
     })
@@ -41,7 +41,6 @@ const clearInputs = (...inputs) => {
 const showResults = (output, type) => {
 
         if (type === 'downgrade') {
-
             const results = dataManager.calculateDowngrade()
             const credit = dataManager.calculateCredit(results.platformPrice, results.oldDailyTotal, results.newDailyTotal)
             //placeholder error handling is NaN isn't showing in DOM when no input is applied
