@@ -33,7 +33,7 @@ const dataManager = (function (){
             //destructuring inputData for clarity
             const { platformPrice, newPlatformPrice, daysInMonth, newPlatformDays, oldPlatformDays } = inputData
             
-            let outputData = {
+            outputData = {
                 //pushing platformPrice into obj to calculate credit after obj is initialized
                 platformPrice: platformPrice,
                 newDailyRate: Math.round(this.calculateDailyRate(newPlatformPrice, daysInMonth)),
